@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Convoke</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>convoke</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <meta
       name="description"
       content="A strategic marketing and consulting agency focused on gaming and esports"
@@ -12,15 +12,15 @@
     <link rel="icon" href="favicon.ico" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
     <script>
-      WebFont.load({ google: { families: ["Cantata One", "Open Sans"] } });
+      WebFont.load({ google: { families: ["Kosugi"] } });
     </script>
     <style type="text/css">
       html,
       body {
-        background-color: #eee;
-        color: #111;
+        background-color: #000;
+        color: #fff;
 
-        font-family: "Cantata One", serif;
+        font-family: "Kosugi", sans-serif;
       }
 
       .wrapper {
@@ -36,78 +36,64 @@
       }
 
       .content {
-        text-align: center;
-
-        opacity: 0;
         transition: opacity 1.5s;
+
+        text-align: center;
+        opacity: 0;
       }
 
+      /* when fonts have loaded */
       .wf-active .content {
-        opacity: 1;
+        opacity: 0.95;
+      }
+
+      .symbol {
+        font-size: 64px;
       }
 
       .title {
-        font-size: 64px;
-        margin-bottom: 8px;
+        margin-bottom: 16px;
+        font-size: 112px;
       }
 
       .text {
         font-size: 16px;
         line-height: 1.5em;
+        opacity: 0.75;
       }
 
       .contact {
         display: block;
-        width: 150px;
-        margin: 14px auto 0;
+        width: 140px;
+        margin: 28px auto;
 
-        font-size: 12px;
-        font-family: "Open Sans", sans-serif;
+        font-size: 14px;
+        line-height: 1.8em;
+        background-color: #f00;
+        color: #fff;
 
         text-decoration: none;
       }
 
-      .contact:hover span {
-        text-decoration: underline;
-      }
-
-      .contact .envelope {
-        height: 60px;
-        margin: auto;
-
-        font-size: 54px;
+      .contact:hover {
+        background-color: #fff;
+        color: #f00;
       }
     </style>
   </head>
   <body>
     <div class="wrapper">
       <div class="content">
-        <div class="title">Convoke</div>
+        <div class="symbol">&#x25BD;</div>
+        <div class="title">convoke</div>
         <div class="text">
-          A strategic marketing and consulting agency <br />
+          strategic marketing and consulting agency <br />
           focused on gaming and esports
         </div>
         <a class="contact" href="mailto:gary@convoke.gg" title="Send a message">
-          <div class="envelope">&#9993;</div>
-          <span>Send a message</span>
+          [ make contact ]
         </a>
       </div>
     </div>
-    <script>
-      const contact = document.querySelector(".contact");
-
-      const hueMin = 120;
-      const hueMax = 250;
-      let hue = 220;
-      let shift = -0.1;
-
-      function rotateColor() {
-        if (hue < hueMin || hue > hueMax) shift *= -1;
-        contact.style.color = `hsl(${(hue += shift)}, 60%, 40%)`;
-        window.requestAnimationFrame(rotateColor);
-      }
-
-      rotateColor();
-    </script>
   </body>
 </html>
