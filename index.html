@@ -3,14 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>convoke</title>
-    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <title>( convoke )</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.5" />
     <meta
       name="description"
       content="A strategic marketing and consulting agency focused on gaming and esports"
     />
     <link rel="icon" href="favicon.ico" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.15/paper-full.min.js"></script>
+    <script type="text/javascript" src="js/util.js"></script>
+    <script type="text/javascript" src="js/shapes.js"></script>
+    <script type="text/javascript" src="js/GenesisPanel.js"></script>
+    <script type="text/javascript" src="js/ext/GenesisLines.js"></script>
+    <script type="text/javascript" src="js/ext/GenesisCentroid.js"></script>
+    <script type="text/javascript" src="js/RectGrid.js"></script>
+    <script type="text/javascript" src="js/make/special.js"></script> -->
     <script>
       WebFont.load({ google: { families: ["Kosugi"] } });
     </script>
@@ -24,6 +32,9 @@
       }
 
       .wrapper {
+        transition: opacity 1.1s;
+        opacity: 0;
+
         position: fixed;
         top: 0;
         left: 0;
@@ -35,16 +46,36 @@
         justify-content: center;
       }
 
-      .content {
-        transition: opacity 1.5s;
-
-        text-align: center;
-        opacity: 0;
+      /* when fonts have loaded */
+      .wf-active .wrapper {
+        opacity: 0.95;
       }
 
-      /* when fonts have loaded */
-      .wf-active .content {
-        opacity: 0.95;
+      .background {
+        opacity: 0.33;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+
+        background: url(https://i.imgur.com/FsV3Vi8.jpg) no-repeat center center
+          fixed;
+        background-size: cover;
+
+        filter: grayscale(100%);
+      }
+
+      .content {
+        text-align: center;
+      }
+
+      #canvas {
+        display: block;
+        margin: auto;
+        margin-bottom: -54px;
       }
 
       .symbol {
@@ -52,27 +83,48 @@
       }
 
       .title {
-        margin-bottom: 16px;
         font-size: 112px;
+        letter-spacing: 0.01em;
 
         transform: rotate(-0.4deg);
       }
 
-      .text {
-        font-size: 16px;
-        line-height: 1.5em;
+      .tags {
+        margin: 1.8em;
+        padding: 0 1.6em;
+        line-height: 2.4em;
+        letter-spacing: 0.1em;
+
+        font-size: 13px;
         opacity: 0.75;
 
+        background: #fff;
+        color: #000;
+
+        text-transform: uppercase;
+
         transform: rotate(0.2deg);
+      }
+
+      .flavor {
+        margin: 1.2em 0;
+        line-height: 1em;
+
+        font-size: 24px;
+        opacity: 0.75;
+
+        transform: rotate(-0.1deg);
       }
 
       .contact {
         display: block;
         width: 140px;
-        margin: 28px auto;
+
+        margin: auto;
+        line-height: 2em;
+        letter-spacing: 0.1em;
 
         font-size: 12px;
-        line-height: 2em;
         background-color: #f00;
         color: #fff;
 
@@ -88,17 +140,54 @@
   </head>
   <body>
     <div class="wrapper">
+      <div class="background"></div>
       <div class="content">
         <div class="symbol">&#x25BD;</div>
+        <!-- <canvas id="canvas"></canvas> -->
         <div class="title">convoke</div>
-        <div class="text">
-          strategic marketing and consulting agency <br />
-          focused on gaming and esports
+        <div class="tags">
+          Gaming | Esports | Consulting | Creative | Marketing Services
         </div>
+        <div class="flavor">▷ Anything is Possible ◁</div>
         <a class="contact" href="mailto:gary@convoke.gg" title="Send a message">
           [ press start ]
         </a>
       </div>
     </div>
+    <!-- <script type="text/javascript">
+      var width = 660;
+      var height = 160;
+
+      var radius = 48;
+      var paddingV = 0;
+      var paddingH = 120;
+
+      // initialize paper with new canvas element
+      var canvas = document.getElementById("canvas");
+      canvas.width = width;
+      canvas.height = height;
+
+      paper.setup(canvas);
+
+      function makeArgs(i) {
+        return {
+          x: i * width,
+          y: 0,
+          width: width,
+          height: height,
+          radius: radius,
+          paddingV: paddingV,
+          paddingH: paddingH
+        };
+      }
+
+      var i = 0;
+      makeSpecial(makeArgs(i++));
+
+      /**
+       * Execute
+       */
+      paper.view.draw();
+    </script> -->
   </body>
 </html>
