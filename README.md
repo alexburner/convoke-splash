@@ -1,1 +1,1 @@
-[![](https://i.imgur.com/f2SiGPEl.png)](https://convoke.gg)
+[![](https://i.imgur.com/bHZiNWl.png)](https://convoke.gg)
