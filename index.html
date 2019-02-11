@@ -14,6 +14,7 @@
     <link rel="icon" href="favicon.ico" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
     <script>
+      /* (font) - load Google families */
       WebFont.load({ google: { families: ["Kosugi"] } });
     </script>
     <style type="text/css">
@@ -22,13 +23,11 @@
         background-color: #000;
         color: #fff;
 
+        /* (font) - apply Google families */
         font-family: "Kosugi", sans-serif;
       }
 
       .wrapper {
-        transition: opacity 1.1s;
-        opacity: 0;
-
         position: fixed;
         top: 0;
         left: 0;
@@ -38,9 +37,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        
+        /* (font) - start hidden */
+        transition: opacity 1.1s;
+        opacity: 0;
       }
 
-      /* when fonts have loaded */
+      /* (font) - show when loaded */
       .wf-active .wrapper {
         opacity: 0.95;
       }
